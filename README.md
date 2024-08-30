@@ -1,2 +1,2 @@
 # WEB-2_DEV
-Full stack Development
+Full stack Web Development
