@@ -1,0 +1,48 @@
+.parent
+{
+    border: 1px solid black;
+    height: 500px;
+    width: 450px;
+    position: relative;
+    margin-top: 50px;
+
+}
+.green
+{
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    position: sticky;
+    top:50px;
+}
+
+.red
+{
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    position: fixed;
+    top: 20px;
+    left: 40px;
+}
+.blue
+{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(47, 0, 255);
+    position: static;
+    top: 400px;
+}
+.brown
+{
+    height: 50px;
+    width: 50px;
+    background-color:brown;
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    
+}
+p{
+    font-size: 100px;
+}

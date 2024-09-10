@@ -1,0 +1,7 @@
+.coloumn{
+    float: left;
+    width: 30%;
+    border-left: 2px green solid;
+    padding-left: 15px;
+    text-align: justify;
+}

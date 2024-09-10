@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav h2{
+        font-size: 40px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    height: 30px;
+
+}
+.nav1 a{
+    font-size: 20px;
+   margin-right: 30px;
+   text-decoration: none;
+   color: #ffffff;
+   padding-left: 20px;
+}
+.nav2{
+    padding: 10px,30px;
+    color: white;
+}
+.col img{
+    width: 500px;
+}
+.body{
+    background-image: url(images/library-7408106_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Hover effect for link */
+nav a:hover {
+    box-shadow: 10px 10px 10px rgba(250, 167, 42, 0.2); /* Add shadow for 3D effect */
+    font-size: 25px;
+}

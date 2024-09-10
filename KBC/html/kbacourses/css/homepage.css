@@ -1,0 +1,84 @@
+nav{
+     padding: 20px;
+     background-color: rgb(255, 255, 255);
+     box-shadow: 3px 3px 8px  rgb(212, 212, 212);
+}
+nav a 
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(91, 47, 133);
+    float: right;
+    margin: 30px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+img{
+    height: 70px;
+    width: 70px;
+}
+body{
+
+    background-color: #f5eef8;
+    margin: 0;
+}
+.p1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+   text-align: center;
+
+}
+.pp{
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.p2{
+    color: darkviolet;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+
+}
+.p3{
+    color: darkviolet;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+.div1{
+    background-color: #d7bde2;
+    height: 200px;
+    padding-top: 20px;
+    text-align: center;
+}
+.p4{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.div2 img{
+    width: 100%;
+    height: 400px;
+    
+}
+.div2{
+    border: solid 1px;
+    width: 800px;
+    height: 600px;
+   margin: 20px;
+    
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 3px 3px 8px  rgb(119, 118, 118);
+    background-color: #d7bde2;
+}
+.div2 p{
+    text-align: center;
+}
+
+

@@ -1,0 +1,43 @@
+.container{
+    
+    border-radius: 30px;
+    width: 500px;
+    height: 700px;
+    padding-left: 5%;
+    padding-top: 3%;
+    margin-left: 700px;
+    margin-top: 100px;
+    background-color: white;
+    box-shadow: 3px 3px 3px 3px rgb(189, 187, 187),3px 3px 3px 3px rgb(182, 181, 181);
+}
+.button{
+    background-color: blueviolet;
+    margin-left: 150px;
+}
+h2{
+    padding-left: 170px;
+   
+}
+.text1{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.text3{
+    font-family: Arial, Helvetica, sans-serif;
+    color: blueviolet;
+}
+input{
+    height: 30px;
+    width: 400px;
+}
+h1{
+    padding-left: 160px;
+    color: rgb(20, 20, 165);
+}
+select{
+    height: 30px;
+    width: 400px;
+}
+.button2{
+    margin-left: 0;
+}
