@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write a program to print the minimum & maximum element in array =[8,2,6,7,3,1] -->
+    <script>
+        array=[8,2,6,7,3,1]
+        s=array[0]
+        l=array[0]
+        for(i=1;i<array.length;i++){
+            if(array[i]<s){
+                s=array[i]
+            }
+            }
+            document.write("minimum element in an aaray is :",s,"<br>")
+        for(j=1;j<array.length;j++){
+            if(array[j]>l){
+                l=array[j]
+            }
+            }
+            document.write("maximum element in an aaray is :",l,"<br>")
+    </script>
+</body>
+</html>

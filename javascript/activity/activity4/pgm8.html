@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Program to read an array containing elements 20,25,30,35,40,45,50,55 and divide the array into two arrays containing half elements -->
+    <script>
+        a=[20,25,30,35,40,45,50,55]
+        b=[]
+        c=[]
+        for(i=0;i<a.length/2;i++){
+            b.push(a[i])
+        }
+        document.write(b,"<br>")
+        for (j=a.length/2;j<a.length;j++){
+            c.push(a[j])
+        }
+        document.write(c)
+    </script>
+</body>
+</html>

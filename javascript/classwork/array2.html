@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a=[1,2,3,4,5]
+        a.push(6)
+        document.write(a,"<br>")
+        // pop operation in array 
+        a.pop()
+        document.write(a,"<br>")
+        // tostring opration in array 
+        b=a.toString()
+        document.write(b[1],"<br>")
+        // concation in array 
+        c=[6,7,8,9]
+        d=a.concat(c)
+        document.write(d,"<br>")
+        // splice operation in array
+        d.splice(3,0,0,1,0)
+        document.write(d,"<br>")
+        // slice opration in array 
+        sl=d.slice(2,7)
+        document.write(sl)
+        // reverse of array
+        document.write("<br>",sl.reverse())
+        // sort an array 
+        document.write("<br>",sl.sort())
+        // index of array 
+        let n=sl.indexOf(1)
+        document.write("<br>",n)
+        // join anything to array
+        document.write("<br>",sl.join("*"))
+    </script>
+</body>
+</html>

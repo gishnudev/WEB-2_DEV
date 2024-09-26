@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write a program to check whether a number is palindrome or not -->
+    <script>
+         a=35453
+         x=a
+            r=0
+            for(;a>0;a=Math.floor(a/10)){
+                m=a%10
+                r=(r*10)+m
+            }
+            if(r==x){
+                document.write("no. is palindrome")
+            }
+            else{
+                document.write("no. is not palindrome")
+            }
+    </script>
+</body>
+</html>

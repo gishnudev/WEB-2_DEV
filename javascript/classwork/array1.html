@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a=[1,2,3,4,5]
+        b=[9,8,7,6,5]
+        c=[]
+        for(i=0;i<5;i++){
+                c[i]=(a[i]+b[i])
+            }   
+            for(x in c){
+                document.write(c[x])
+            }
+            document.write("<br>")
+       
+            for(x of c){
+                document.write(x)
+            }
+            document.write("<br>")
+
+            let s=0
+            for(x of c){
+                s=s+x
+            }
+            document.write("sum is :",s)
+            document.write("<br>")
+
+            s1=0
+            for(x in c){
+                s1=s1+c[x]
+            }
+            document.write("sum is :",s)
+    </script>
+</body>
+</html>
