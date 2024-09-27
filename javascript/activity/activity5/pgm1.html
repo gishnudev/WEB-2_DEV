@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // a. From the list find the position of your favourite film
+        film=["ARM","KISHKINDHA KHANDAM","BAD BOYZ","KONDAL","KIREEDAM","SPADIKAM","DEDPOOL",'VAAZHA']
+        a=film.indexOf("BAD BOYZ")
+        document.write("index position of BAD BOYZ is :",a)
+        // b. Add one more film to the list
+        film.push("DEVARA")
+        document.write("<br>",film)
+        // c. Pop one film from the list
+        film.pop()
+        document.write("<br>",film)
+        // d. Delete the least interested film from the list
+        delete film[2]
+        document.write("<br>",film)
+        // c. Make a different list from 3rd position to 6th position
+        s=film.slice(3,6)
+        document.write("<br>",s,"<br>")
+        // d. Search whether "ARM" is on your list
+        document.write(film.includes("ARM"))
+    </script>
+</body>
+</html>

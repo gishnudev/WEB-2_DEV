@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        even=[]
+        odd=[]
+        array=[1,2,3,4,5,6,7,8,9]
+        document.write(array)
+        for(x in array){
+            if(array[x]%2==0){
+                even.push(array[x])
+            }
+            else{
+
+                odd.push(array[x])
+            }
+        }
+        document.write("<br>odd numbers :",odd)
+        document.write("<br>even numbers :",even)
+    </script>
+
+</body>
+</html>
