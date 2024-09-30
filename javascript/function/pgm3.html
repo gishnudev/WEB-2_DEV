@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <!-- arrow function     -->
+     <script>
+        let add = function(a,b){
+            return a+b;
+
+        }
+        let addarrow = (a,b) => a+b;
+        console.log('Regular function:',add(2,3));
+        console.log('Arrow function:',addarrow(2,3));
+     </script>
+     <script>
+         let person={
+            name:'gishnu',age:20,city:"Trivandrum",
+            greet: function(){
+                setTimeout(()=>{
+            console.log("Hello "+ this.name);
+        },10000);
+    }
+    };
+    person.greet();
+     </script>
+     <script>
+        function outer(){
+            let outervar = ' I am outer';
+            function inner(){
+                console.log('Iam inner');
+                console.log(outervar);
+
+            }inner();
+        }outer();
+     </script>
+</body>
+</html>

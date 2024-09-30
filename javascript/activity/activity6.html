@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Read two matrix and check whether they are same or not -->
+     <script>
+        a=[[1,2,3],[4,5,6]]
+        b=[[1,2,3],[4,5,6]]
+        t=0
+        if(a.length==b.length){
+            for (i=0;i<2;i++){
+                for(j=0;j<3;j++){
+                    if (a[i][j]==b[i][j]){
+                        t=0
+                    }
+                    else{
+                        t=1
+                        break
+                    }
+                }
+                if(t==1){
+                        break
+                    }
+            }
+        }
+        if (t==0){
+            document.write("matrix are same")
+        }
+        else{
+            document.write("matrix are not same")
+        }
+
+     </script>
+</body>
+</html>

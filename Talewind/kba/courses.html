@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KBA Courses</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KBA Courses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
   <nav class="bg-blue-500 shadow-md shadow-gray-600 justify-between md:flex text-white p-2 h-[80px]">
     <img src="/Talewind/images/kbalogo.png" alt="" class="size-16 ">
@@ -14,37 +16,78 @@
       <a href="courses.html" class=" p-5 hover:bg-sky-700">COURSE</a>
       <a href="addcourse.html" class=" p-5 hover:bg-sky-700"> ADD COURSE</a>
       <a href="contact.html" class=" p-5 hover:bg-sky-700">CONTACT</a>
-    </div>   
+    </div>
   </nav>
-  
-  <h1 class="font-bold text-3xl p-5">All Courses</h1>
-<!-- courses -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 
-  <div class="p-3 shadow-lg shadow-gray-500 mt-8 mb-10 ml-5 bg-purple-200">
+  <h1 class="font-bold text-3xl p-5">All Courses</h1>
+  <!-- courses -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+    <div class="p-3 shadow-lg shadow-gray-500 mt-8 mb-10 ml-5 bg-purple-200">
       <h2 class="text-center text-xl pt-4 font-bold text-purple-800">s122</h2>
-      <img src="/Talewind/images/rp.png" >
+      <img src="/Talewind/images/rp.png">
 
       <p class="p-10 justify-center">More. </p>
       <a href="learnmore.html" class="pl-10 text-white bg-purple-600 py-2 ml-10 pr-8 rounded-lg ">Learn More</a>
-  </div>
-  <div class="p-3 shadow-lg shadow-gray-500 mt-8 mb-10 ml-5 bg-purple-200">
-    <h2 class="text-center text-xl pt-4 font-bold text-purple-800">s122</h2>
-    <img src="/Talewind/images/rp.png" >
+    </div>
+    <div class="p-3 shadow-lg shadow-gray-500 mt-8 mb-10 ml-5 bg-purple-200">
+      <h2 class="text-center text-xl pt-4 font-bold text-purple-800">s122</h2>
+      <img src="/Talewind/images/rp.png">
 
-    <p class="p-10 justify-center">More. </p>
-    <a href="learnmore.html" class="pl-10 text-white bg-purple-600 py-2 ml-10 pr-8 rounded-lg ">Learn More</a>
-</div>
-  <div class="p-3 shadow-lg shadow-gray-500 mt-8 mb-10 mr-5 bg-purple-200">
-    <h2 class="text-center text-xl pt-4 font-bold text-purple-800">s122</h2>
-    <img src="/Talewind/images/rp.png" >
+      <p class="p-10 justify-center">More. </p>
+      <a href="learnmore.html" class="pl-10 text-white bg-purple-600 py-2 ml-10 pr-8 rounded-lg ">Learn More</a>
+    </div>
+    <div class="p-3 shadow-lg shadow-gray-500 mt-8 mb-10 mr-5 bg-purple-200">
+      <h2 class="text-center text-xl pt-4 font-bold text-purple-800">s122</h2>
+      <img src="/Talewind/images/rp.png">
 
-    <p class="p-10 justify-center">More. </p>
-    <a href="learnmore.html" class="pl-10 text-white bg-purple-600 p-2 ml-10 pr-8 rounded-lg">Learn More</a>
+      <p class="p-10 justify-center">More. </p>
+      <a href="learnmore.html" class="pl-10 text-white bg-purple-600 p-2 ml-10 pr-8 rounded-lg">Learn More</a>
+    </div>
+  </div>
+  <div>
+    <h2 class="flex justify-center text-xl">Rate Your Experience</h2>
+    <div id="mydiv5" class="flex justify-center p-4 space-x-4">
+      <div id="good" class="text-green-500">
+        <label for="gradio">GOOD</label>
+      </div>
+      <div id="bad" class="text-red-500">
+        <label for="bradio">BAD</label>
+      </div>
+      <div id="avg" class="text-yellow-500">
+        <label for="aradio">AVERAGE</label>
+      </div>
+    </div>
   </div>
   </div>
-</div>
-<footer class="text-center bg-sky-500 p-6">This page All rights reserved to Gishnu</footer>
-   
+  <script>
+    {
+      let element = document.createElement("input");
+      element.type = "radio";
+      element.id = "gradio";
+      element.name = "experience";
+      element.value = "good";
+      document.getElementById("good").appendChild(element);
+
+      let element1 = document.createElement("input");
+      element1.type = "radio";
+      element1.id = "bradio";
+      element1.name = "experience";
+      element1.value = "bad";
+      document.getElementById("bad").appendChild(element1);
+
+      let element2 = document.createElement("input");
+      element2.type = "radio";
+      element2.id = "aradio";
+      element2.name = "experience";
+      element2.value = "avg";
+      document.getElementById("avg").appendChild(element2);
+
+    }
+  </script>
+
+  <footer class="text-center bg-sky-500 p-6">This page All rights reserved to Gishnu</footer>
+
 </body>
+
 </html>
