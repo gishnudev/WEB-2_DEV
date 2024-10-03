@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Higher Order functions</h1>
+    <p>Check console for output</p> 
+    <script>
+        let numbers = [1,2,3,4,5]
+        let doubbled =numbers.map(n=>n*2)
+        console.log(doubbled)
+
+        let even = numbers.filter(n => n%2===0)
+        console.log('Even numbers:',even)
+
+        let sum = numbers.reduce((total,n) => total+n,0)
+        console.log('Sum:',sum)
+
+
+        // array initialisation with 0
+        let array = new Array(5).fill(0);
+        console.log("Initialized array is :",array)
+
+        for(i=0;i<array.length;i++){
+            array[i]=i+1
+        }
+        console.log('filled array:',array);
+        for(i=0;i<array.length;i++){
+            doubbledArray= array.map(n=>n*2)
+        }
+        console.log('Doubbled array:',doubbledArray);
+    </script>
+</body>
+</html>

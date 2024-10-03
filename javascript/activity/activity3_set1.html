@@ -6,18 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="lis"></div>
+    <h3>Program to print a para about yourself using createElement() , textContent & append child.</h3>
+    <p id="h"></p>
 
      <script>
     //  Program to print a para about yourself using createElement() , textContent & append child.
-        element=document.createElement("l")
-        element.innerHTML=" I'am Gishnu Devadatahn and belongs to Kottayam District"
-        document.getElementById("lis").appendChild(element)
+        element=document.createElement("p")
+        element.textContent= " I'am Gishnu Devadatahn and belongs to Kottayam District"
+        document.getElementById("h").appendChild(element)
      </script>
       <!-- Make an unordered list of cinemas on html page using javascript. -->
-    <div id="ulist">
-
-    </div>
+    <h3>Make an unordered list of cinemas on html page using javascript</h3>
+    <div id="ulist"></div>
     <script>
         {
             let element=document.createElement("ul")
@@ -38,6 +38,7 @@
             document.getElementById("ulist").appendChild(element)
         }
     </script>
+    <h3>Create a dropdown for programming language classes offered on html page using javascript.</h3>
     <!-- Create a dropdown for programming language classes offered on html page using javascript. -->
      <div id="drop1">
 
@@ -64,6 +65,7 @@
         document.getElementById("drop1").appendChild(a)
      </script>
 
+     <h3>Create a dropdown containing name of books on the book shop page after List of Book heading.</h3>
     <!-- Create a dropdown containing name of books on the book shop page after List of Book heading. -->
      <div id="drop2"></div>
      <script>
@@ -86,7 +88,7 @@
             e.innerHTML="Don Quixote"
             a.appendChild(e)
 
-            document.getElementById("drop1").appendChild(a)
+            document.getElementById("drop2").appendChild(a)
         }
 
      </script>
@@ -311,11 +313,5 @@
         a=73
         a>=18?document.write("person is eligible for voting"):document.write("person is not eligible for voting")
     </script>
-
-    
-
-
-
-     
 </body>
 </html>

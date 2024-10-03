@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person ={
+            fullName: function(city,country){
+                console.log(this.firstname+" "+this.lastname+","+city+","+country)
+            }
+        }
+        const person1={
+            firstname:"Gishnu",
+            lastname:"Devadathan"
+        }
+        person.fullName.call(person1,"kerala",'India')
+    </script>
+    <script>{
+        const person ={
+            fullName: function(city,country){
+                console.log(this.firstname+" "+this.lastname+","+city+","+country)
+            }
+        }
+        const person1={
+            firstname:"Gishnu",
+            lastname:"Devadathan"
+        }
+        const person2={
+            firstname:"Vishnu",
+            lastname:"Devadathan"
+        }
+        const person3={
+            firstname:"Aneesh",
+            lastname:"MN"
+        }
+        person.fullName.apply(person2,["London","UK"]);
+        const boundFunction=person.fullName.bind(person3,"Kingston","Jamaica");
+        boundFunction();
+    }
+    </script>
+</body>
+</html>
