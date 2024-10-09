@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Using the new keyword, create an object constructor Book that contains properties such as title, author, and year. 
+    Add a method getDetails that logs the book's details in the format "Title: [title], Author: [author], Year: [year]". 
+    Instantiate two books and log their details using the getDetails method. -->
+    <script>
+
+        function Book(title,author,year){
+            this.title=title;
+            this.author=author;
+            this.year=year;
+            this.getDetails = function(){
+                console.log(`Title: ${this.title}, Author: ${this.author}, Year: ${this.year}`);
+            };
+        }
+        const book1 = new Book('Pathummayude Aadu', 'Vaikom Muhammad Basheer', 1959);
+        const book2 = new Book('Randamoozham', 'M. T. Vasudevan Nair', 1984);
+
+    book1.getDetails();
+    book2.getDetails();
+    </script>
+</body>
+</html>

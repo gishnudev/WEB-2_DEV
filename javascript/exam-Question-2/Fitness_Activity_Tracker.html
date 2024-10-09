@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+</head>
+<style>
+        .low { color: green; }
+        .medium { color: orange; }
+        .high { color: red; }
+        .completed { text-decoration: line-through; color: gray; }
+        button { margin-left: 10px; }
+
+</style>
+<body style="text-align: center;">
+<!-- Question 2: Fitness Activity Tracker (30 marks)
+Objective:
+
+Create a Fitness Activity Tracker application where users can add, edit, complete, and remove fitness activities. Each activity should have a name and an intensity level (1-Low, 2-Medium, 3-High). The application should use type conversion and arrays to manage the activities and their intensity levels.
+
+Requirements:
+a) HTML Structure (5 marks)
+Create an input field for the activity name.
+Create an input field for the intensity level (1-Low, 2-Medium, 3-High).
+Add a button to add the activity.
+Include an unordered list to display the activities.
+b) Adding and Displaying Activities (10 marks)
+In JavaScript, implement a function to add an activity with its name and intensity level.
+Use arrays to keep track of activities and their intensity levels.
+Use type conversion to ensure the intensity level input is handled correctly.
+Display activities with different colors based on their intensity level:
+Low (green)
+Medium (orange)
+High (red)
+c) Completing and Editing Activities (5 marks)
+Implement functionality to mark an activity as "completed" by striking through the text and changing the color to gray.
+Implement functionality to edit the name of an activity.
+d) Removing Activities and Local Storage (10 marks)
+Implement functionality to remove an activity from the list.
+Use localStorage to persist the activity list between sessions. -->
+
+<div>
+    <h1>Activity Tracker</h1>
+    <div>
+        <label for="activity">Activity:</label>
+        <input type="text" id="activity" placeholder="Enter activity">
+    </div>
+    <div>
+        <label for="intensity">Intensity (1-3):</label>
+        <input type="number" id="intensity" placeholder="Enter the intencity level">
+    </div>
+    <button onclick="addActivity()">Add Activity</button>
+
+    <h2>Activity List</h2>
+    <ul id="activityList"></ul>
+
+<script src="tracker.js"></script>
+</body>
+</html>
