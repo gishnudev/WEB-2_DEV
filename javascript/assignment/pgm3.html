@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">First Number:</label>
+    <input type="number" id="fno">
+    <label for="">Second Number:</label>
+    <input type="number" id="sno">
+    <button type="button" onclick="comp()">Compare</button>
+    <p id="result"></p>
+
+    <script>
+        function comp(){
+            fno=Number(document.getElementById('fno').value)
+            sno=Number(document.getElementById('sno').value)
+            if (fno==sno){
+                document.getElementById('result').textContent = "Numbers are the same";
+        }else{
+            document.getElementById('result').textContent = "Numbers are not same";
+        }
+        }
+        
+    </script>
+</body>
+</html>

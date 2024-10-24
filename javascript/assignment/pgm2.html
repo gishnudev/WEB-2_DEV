@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div>
+        <div class="flex">
+            <h2>Name:</h2>
+            <input type="text">
+        </div>
+        <div class="flex">
+            <h2>Address:</h2>
+            <input type="text">
+        </div>
+        <div>
+            <label for="">Degree:</label>
+            <label for="">BTECH</label>
+            <input type="radio" name="course" id="btech" onclick="toggleDropdown()">
+            <label for="">MTECH</label>
+            <input type="radio" name="course" id="mtech" onclick="toggleDropdown()">
+            <label for="">MCA</label>
+            <input type="radio" name="course" id="mca" onclick="toggleDropdown()">
+            <label for="">OTHERS</label>
+            <input type="radio" name="course" id="others" onclick="toggleDropdown()">
+        </div>
+        <select id="otherOptions" class="hidden mt-2">
+            <option value="">Select a degree</option>
+            <option value="BCA">BCA</option>
+            <option value="PGDCA">PGDCA</option>
+            <option value="BCom">BCom</option>
+            <option value="MPhil">MPhil</option>
+        </select>
+    </div>
+    <script>
+        // Function to show/hide dropdown
+        function toggleDropdown() {
+            const othersRadio = document.getElementById('others');
+            const otherOptionsDropdown = document.getElementById('otherOptions');
+            
+            if (othersRadio.checked) {
+                otherOptionsDropdown.classList.remove('hidden');
+            } else {
+                otherOptionsDropdown.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>
