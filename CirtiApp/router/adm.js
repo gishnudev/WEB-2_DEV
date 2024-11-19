@@ -13,6 +13,7 @@ const secretKey = process.env.SecretKey;
 
 Route.use(json())
 
+
 Route.post('/signup', async(req, res) => {
     try {                                   //error handling using try catch method
         console.log("Hi")
@@ -84,17 +85,17 @@ Route.post('/issueCirtificate', authenticate, async(req, res) => {
         console.log(req.UserName);
         console.log(req.Role);
 
-        const {  CourseId,CourseName, Grade, CourseType,IssueDate } = req.body
-        console.log(CourseName);
+        const {  CourseId,CandidateName, Grade,IssueDate,CourseName } = req.body
+        console.log(CourseId);
 
         if (req.Role == "admin") {
-            if (user.has(CourseName)) {
+            if (user.has(CourseId)) {
                 res.status(400).json({ message: "Cirtificate already exsist" })
             }
             else {
-                user.set(CourseName, { CourseId,CourseName, Grade,CourseType, IssueDate})
+                user.set(CourseId, { CandidateName, Grade, IssueDate,CourseName})
                 res.status(200).json({ message: 'Cirtificate Added Successfully' })
-                console.log(user.get(CourseName))
+                console.log(user.get(CourseId))
             }
 
 
@@ -112,6 +113,40 @@ Route.post('/issueCirtificate', authenticate, async(req, res) => {
     }
 
 })
+
+
+Route.get('/viewUser', authenticate, (req, res) => {
+    try {
+        const user = req.Role;
+        res.json({ user });
+    }
+    catch {
+        res.status(404).json({ message: 'user not authorized' });
+    }
+})
+
+Route.get('/getCertificate/:CourseId',(req,res)=>{
+    try{
+        const search =req.params.CourseId
+   console.log(search);
+
+        if (user.has(search)) {
+            console.log(user.get(search));
+            const items =user.get(search)
+            return res.status(200).json({
+                message:search,
+                course:items
+            })
+
+        }
+        else {
+            res.status(404).json({ message: "No course found,Check the name" })
+        }
+    }
+    catch (error) {
+        res.status(400).json({ message: "Check the input" })
+    }
+ })
 
 
 export {Route};

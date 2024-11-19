@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById("Name").value
+            const email = document.getElementById("Email").value
+            const pswd = document.getElementById("Password").value
+            const cpswd = document.getElementById("ConfirmPassword").value
+            const role = document.getElementById("Role").value
+
+            console.log(name, email, pswd, cpswd, role)
+
+            const response=await fetch("http://127.0.0.1:8005/signup", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(
+                {
+                    Name: name,
+                    Email: email,
+                    Password: pswd,
+                    ConfirmPassword: cpswd,
+                    Role: role
+                })
+            })
+            console.log(response.status)
+            if(response.status==201){
+                alert("signed successfully")
+                window.location.href="./login.html"
+            }else if(response.status==400){
+                alert("User already exist")
+            }else if(response.status==500){
+                alert("error")
+        }}
+    </script>
+</head>
+<body>
+    <nav class="bg-black flex h-[70px]">
+        <div > 
+            <h2 class="text-white font-sans	text-3xl font-bold p-3">book world</h2>
+        </div>
+        <div class="flex py-4 ">
+            <a href="libhome.html"><h1 class="bg-black text-white text-xl ml-[1000px] px-6 transition delay-200 duration-300 ease-in-out hover:text-black hover:bg-white p-2 rounded-lg">Home</h1></a>
+            <a href="login.html"><h1 class="text-white text-xl px-6 transition delay-200 duration-300 ease-in-out hover:text-black hover:bg-white p-2 rounded-lg">Login</h1></a>
+            <a href="sign.html"><h1 class="text-white text-xl px-6 transition delay-200 duration-300 ease-in-out hover:text-black hover:bg-white p-2 rounded-lg">Sign up</h1></a>
+            <a href="mylib.html"><h1 class="text-white text-xl px-6 transition delay-200 duration-300 ease-in-out hover:text-black hover:bg-white p-2 rounded-lg">My Library</h1></a>
+        </div>  
+    </nav> 
+    <div class="relative">
+        <div>
+            <img src="limages/Download Retro big library_ Illustration for free.jpeg " class="h-[862px] w-full ">
+        </div>
+        <div class="ml-[700px] p-16 rounded-lg absolute top-[100px] text-center bg-gradient-to-r from-zinc-500 from-10% via-gray-800 via-30% to-zinc-500 to-90%  shadow-2xl shadow-gray-300 ">
+            <form action="" class="form">
+                <h1 class="text-4xl text-white p-3">Sign Up</h1>
+                <h3 class="text-white p-3">Name:</h3><input type="text" placeholder="Enter your Email_id" class="p-2 rounded-lg" id="Name">
+                <h3 class="text-white p-3">Email:</h3><input type="text" placeholder="Enter your Email_id" class="p-2 rounded-lg" id="Email">
+                <h3 class="text-white  p-3">Password:</h3><input type="password" placeholder="Enter your Password " class="p-2 rounded-lg" id="Password">
+                <h3 class="text-white  p-3">Password:</h3><input type="password" placeholder="Confirm your Password " class="p-2 rounded-lg" id="ConfirmPassword">
+                <br>
+                <select class="in1" name="UserRole" id="Role">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+                <div class="my-4"><button  class="bg-white py-1 px-6 rounded-lg hover:bg-gray-400 hover:px-7" onclick="handleSubmit(event)">SignIn</button></div>
+                <div class="px-2.5 text-white">Do you have an account? <a href="signup.html" class="text-blue-600">LogIn</a></div>
+            </form>
+        </div>
+       </div>
+</body>
+</html>

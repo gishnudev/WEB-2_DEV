@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save, Print, and Sort Array</title>
+    <script>
+        // Initialize an empty array to store the values
+        let valuesArray = [];
+
+        // Function to add value to array and display it
+        function addValue() {
+            const inputValue = document.getElementById("inputField").value;
+            if (inputValue.trim() !== "") {
+                valuesArray.push(inputValue);  // Add value to the array
+                document.getElementById("inputField").value = "";  // Clear input field
+                printArray();  // Call function to print updated array
+            } else {
+                alert("Please enter a valid value.");
+            }
+        }
+
+        // Function to print the array
+        function printArray() {
+            document.getElementById("arrayDisplay").textContent = `Array: [ ${valuesArray.join(", ")} ]`;
+        }
+
+        // Function to sort the array
+        function sortArray() {
+            valuesArray.sort();  // Sort the array alphabetically
+            printArray();  // Display sorted array
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Values</h2>
+    <input type="text" id="inputField" placeholder="Enter a value">
+    <button onclick="addValue()">Add to Array</button>
+
+    <h3 id="arrayDisplay">Array: []</h3>
+    <button onclick="sortArray()">Sort Array</button>
+</body>
+</html>

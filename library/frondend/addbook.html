@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        async function handleAddBook(event){
+            event.preventDefault();
+            const name = document.getElementById("name").value
+            const auther = document.getElementById("auther").value
+            const description = document.getElementById("description").value
+
+            console.log(name,auther,description)
+
+            const response = await fetch("http://127.0.0.1:8005/addBook",{
+                method:"POST",
+                credentials:"include",
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(
+                    {
+                        BookName:name,
+                        AutherName:auther,
+                        Description:description
+                    })
+            })
+            console.log(response.status)
+            if(response.status==200){
+                alert("Book added successfully")
+                console.log(response)
+                 window.location.href="./mylib.html"
+            }else if(response.status==400){
+                alert("fill all fields")
+            }else if(response.status==500){
+                alert("server error")
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav class="bg-black flex h-[70px]">
+        <div > 
+            <h2 class="text-white font-sans	text-3xl font-bold p-3">book world</h2>
+        </div>
+        <div class="flex py-4 ">
+            <a href="libhome.html"><h1 class="bg-black text-white text-xl ml-[1000px] px-6 transition delay-200 duration-300 ease-in-out hover:text-black hover:bg-white p-2 rounded-lg">Home</h1></a>
+            <a href="login.html"><h1 class="text-white text-xl px-6 transition delay-200 duration-300 ease-in-out hover:text-black hover:bg-white p-2 rounded-lg">Login</h1></a>
+            <a href="sign.html"><h1 class="text-white text-xl px-6 transition delay-200 duration-300 ease-in-out hover:text-black hover:bg-white p-2 rounded-lg">Sign up</h1></a>
+            <a href="mylib.html"><h1 class="text-white text-xl px-6 transition delay-200 duration-300 ease-in-out hover:text-black hover:bg-white p-2 rounded-lg">My Library</h1></a>
+        </div>  
+    </nav> 
+    <div>
+        <img src="limages/Download Retro big library_ Illustration for free.jpeg" class="static w-full h-[862px]">
+        <div class="absolute top-[200px] left-[700px] file justify-center bg-gray-400 rounded-lg opacity-75 w-[500px] p-10 shadow-2xl shadow-white">
+            <form action="" class="">
+                <h1 class="text-4xl text-center font-bold" >Add Book</h1>
+                <h3 class="text-xl py-4">Book Name:</h3><input type="text" placeholder="Book Name" class="p-2 rounded-lg" id="name">
+                <h3 class="text-xl py-4">Auther Name:</h3><input type="text" placeholder="Enter Auther Name " class="p-2 rounded-lg" id="auther">
+                <h3 class="text-xl py-4">Choose Book:</h3><input type="file" class="h3" placeholder="Upload your Book" >
+                <h3 class="text-xl py-4">Description:</h3>
+                <textarea  class="des" rows="4" cols="40" id="description"></textarea>
+                <div class="pt-5 pl-[300px]"><button class="bg-white p-2 rounded-xl w-[110px] hover:bg-gray-200 hover:w-[120px]" onclick="handleAddBook(event)">Add Book</button></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
