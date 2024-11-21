@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    async function handleSubmit(event) {
+        event.preventDefault()
+        const Vname = document.getElementById("Vname").value
+            const Vtype = document.getElementById("Vtype").value
+            const Vno = document.getElementById("Vno").value
+            const VsNo = document.getElementById("VsNo").value
+            const date = document.getElementById("date").value
+            const EstTime = document.getElementById("EstTime").value
+            const OwnrNme = document.getElementById("OwnrNme").value
+            const SerDtls = document.getElementById("SerDtls").value
+
+            console.log(Vtype,Vno,VsNo,date,EstTime,OwnrNme,SerDtls)
+
+            const response = await fetch("http://127.0.0.1:8000/addVehicle",{
+                method:"POST",
+                credentials:"include",
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(
+                    {
+                        CourseName:name,
+                        CourseId:id,
+                        Description:description,
+                        CourseType: type,
+                        Price:price
+                        
+                    })
+            })
+            console.log(response.status)
+            if(response.status==200){
+                alert("course addaed successfully")
+                 window.location.href="./homepage.html"
+            }else if(response.status==400){
+                alert("password is not correct")
+            }else if(response.status==500){
+                alert("error")
+            }
+        }
+</script>
+<body class="grid grid-col-3">
+    <div class="place-self-center bg-gray-200 border-black text-center w-[600px] p-6 m-10">
+        <h1 class="text-yellow-600 text-2xl">Add New Vehicle</h1>
+        <div class="flex m-6"><h4>Vehicle Name</h4><input class="ml-3" type="text" placeholder="Enter Vehiclename" id="Vname"></div>
+        <div class="flex m-6"><h4>Vehicle Type</h4><input type="text" class="ml-3" placeholder="Enter Vehicle type" id="Vtype"></div>
+        <div class="flex m-6"><h4>Vehicle No</h4><input type="text" class="ml-3" placeholder="Enter Vehicle no" id="Vno"></div>
+        <div class="flex m-6"><h4>Vehicle Serviceno</h4><input type="text" class="ml-3" placeholder="Enter Vehicle serviceno" id="VsNo"></div>
+        <div class="flex m-6"><h4>Date</h4><input type="date" class="ml-3" placeholder="Enter Date" id="date"></div>
+        <div class="flex m-6"><h4>Estimated Time</h4><input type="time" class="ml-3" placeholder="Enter EstimatedTime" id="EstTime"></div>
+        <div class="flex m-6"><h4>Vehicle Ownername</h4><input type="text" class="ml-3" placeholder="Enter Vehicle Owner name" id="OwnrNme"></div>
+        <div class="flex m-6"><h4>Service Details</h4><input type="text" class="ml-3" placeholder="Enter ServiceDetails" id="SerDtls"></div>
+        <button onclick="handleSubmit()" class="bg-yellow-400 rounded-lg p-2 border-2 border-black hover:bg-yellow-600">Submit</button>
+    </div>
+</body>
+</html>

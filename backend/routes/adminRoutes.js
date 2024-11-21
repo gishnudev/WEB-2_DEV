@@ -70,14 +70,7 @@ Route.post('/signup', async(req,res) => {
             })
             await newUser.save()
             res.status(200).json({message:"User registered successfully"})
-
-            // user.set(UserName, {
-            //     FirstName, LastName, Password: newPass, Role
-            // })
         }
-
-        //console.log(user.get(UserName))
-       // res.status(201).json({ Message: "Data Saved" })
     }
     catch (error) {
         res.status(500).json(error);
@@ -186,45 +179,41 @@ Route.post('/addcourse', authenticate,async (req, res) => {
 
 
 
-// Route.post('/upadate', authenticate,(req, res) => {
-//     try {
-//         if (req.UserName) {
+Route.patch('/upadate', authenticate,async(req, res) => {
+    try {
+        if (req.UserName) {
 
-//             const body = req.body;
-//             console.log(body);
-//             const { newCourseId, CourseName, newCourseType, newDescription, newPrice } = body;
-//             // console.log(cid, cname, ctype, cdescription, cprice);
+            const body = req.body;
+            console.log(body);
+            const { newCourseId, CourseName, newCourseType, newDescription, newPrice } = body;
 
-//             if (CourseName) {
-//                 const oldData = course.get(CourseName)
-//                 console.log(oldData);
+            const oldData = await course.findOne({CourseName:CourseName})
+            if (oldData) {
 
-//                 oldData.CourseId = newCourseId || oldData.CourseId;
-//                 oldData.CourseType = newCourseType || oldData.CourseType;
-//                 oldData.Description = newDescription || oldData.Description;
-//                 oldData.Price = newPrice || oldData.Price;
+                console.log(oldData);
+                oldData.CourseId = newCourseId || oldData.CourseId;
+                oldData.CourseType = newCourseType || oldData.CourseType;
+                oldData.Description = newDescription || oldData.Description;
+                oldData.Price = newPrice || oldData.Price;
+                console.log(oldData);
+                await oldData.save();
+                res.status(200).json({ message: "successfully Updated" })
 
-//                 console.log(oldData);
-//                 course.set(CourseName, oldData);
+            } else {
+                console.log('id is not found!');
+                res.status(404).json({ message: "Course not found" });
+            }
+        } else {
+            console.log('user not loggined')
+            res.status(401).json({ message: "User not authenticated" });
+        }
 
-//                 res.status(200).json({ message: "successfully Updated" })
-//                 console.log(course);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal Server Error" });
 
-//             } else {
-//                 console.log('id is not found!');
-//                 return res.status(404).json({ message: "Course not found" });
-//             }
-//         } else {
-//             console.log('user not loggined')
-//             return res.status(401).json({ message: "User not authenticated" });
-//         }
-
-//     } catch (error) {
-//         console.error(error);
-//         return res.status(500).json({ message: "Internal Server Error" });
-
-//     }
-// });
+    }
+});
 
 // Route.post('/Search', (req, res) => {
 
